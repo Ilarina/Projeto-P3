@@ -50,4 +50,14 @@ describe 'Turmas', :type => :feature do
     expect(page).to have_content(turma.dt_fim_inscricao)
   end
 
+  it 'Listar Turmas' do
+    turma1 = FactoryGirl.create(:turma, cd_turma: "Turma1")
+    turma2 = FactoryGirl.create(:turma, cd_turma: "Turma2")
+
+    visit turmas_path
+
+    expect(page).to have_content("Turma1")
+    expect(page).to have_content("Turma2")
+  end
+
 end
