@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :cd_turma %><br>
+    <%= f.label :cd_turma, "Código" %><br>
     <%= f.text_field :cd_turma %>
   </div>
   <div class="field">
-    <%= f.label :dt_inicio %><br>
+    <%= f.label :dt_inicio, "Data de Início"%><br>
     <%= f.date_select :dt_inicio %>
   </div>
   <div class="field">
-    <%= f.label :dt_fim %><br>
+    <%= f.label :dt_fim, "Data de Término" %><br>
     <%= f.date_select :dt_fim %>
   </div>
   <div class="field">
-    <%= f.label :dt_abertura_inscricao %><br>
+    <%= f.label :dt_abertura_inscricao, "Início das Inscrições" %><br>
     <%= f.date_select :dt_abertura_inscricao %>
   </div>
   <div class="field">
-    <%= f.label :dt_fim_inscricao %><br>
+    <%= f.label :dt_fim_inscricao, "Final das Inscrições" %><br>
     <%= f.date_select :dt_fim_inscricao %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit%>
   </div>
 <% end %>

@@ -83,3 +83,9 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+def selecionar_data(dia, mes, ano, pagina , campo)
+    select ano, :from => "#{pagina}[#{campo}(1i)]"
+    select mes, :from => "#{pagina}[#{campo}(2i)]"
+    select dia , :from => "#{pagina}[#{campo}(3i)]"
+end
