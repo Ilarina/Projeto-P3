@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cd turma:</strong>
+  <%= @turma.cd_turma %>
+</p>
+
+<p>
+  <strong>Dt inicio:</strong>
+  <%= @turma.dt_inicio %>
+</p>
+
+<p>
+  <strong>Dt fim:</strong>
+  <%= @turma.dt_fim %>
+</p>
+
+<p>
+  <strong>Dt abertura inscricao:</strong>
+  <%= @turma.dt_abertura_inscricao %>
+</p>
+
+<p>
+  <strong>Dt fim inscricao:</strong>
+  <%= @turma.dt_fim_inscricao %>
+</p>
+
+<%= link_to 'Edit', edit_turma_path(@turma) %> |
+<%= link_to 'Back', turmas_path %>
