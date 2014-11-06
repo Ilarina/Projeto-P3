@@ -60,4 +60,16 @@ describe 'Turmas', :type => :feature do
     expect(page).to have_content("Turma2")
   end
 
+  it 'Deletar uma Turma' do
+    turma1 = FactoryGirl.create(:turma, cd_turma: "Turma1")
+    
+    visit turmas_path
+    
+    expect(page).to have_content("Turma1")
+
+    click_link "Destroy"
+
+    expect(page).to_not have_content("Turma1")
+  end
+
 end
