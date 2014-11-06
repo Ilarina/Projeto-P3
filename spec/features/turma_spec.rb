@@ -19,6 +19,7 @@ describe 'Turmas', :type => :feature do
 
     expect(page).to have_content("Turma was successfully created.")
   end
+  
   it 'Visualizar uma Turma' do
     turma = FactoryGirl.create(:turma)
     
@@ -27,6 +28,24 @@ describe 'Turmas', :type => :feature do
     expect(page).to have_content(turma.cd_turma)
     expect(page).to have_content(turma.dt_inicio)
     expect(page).to have_content(turma.dt_fim)
+    expect(page).to have_content(turma.dt_abertura_inscricao)
+    expect(page).to have_content(turma.dt_fim_inscricao)
+  end
+
+  it 'Editar uma Turma' do
+    turma = FactoryGirl.create(:turma)
+    
+    visit edit_turma_path(turma)
+
+    selecionar_data "30", 'November', "2014", "turma", "dt_fim"
+
+    click_button "Update Turma"
+
+    expect(page).to have_content("Turma was successfully updated.")
+
+    expect(page).to have_content(turma.cd_turma)
+    expect(page).to have_content(turma.dt_inicio)
+    expect(page).to have_content("2014-11-30")
     expect(page).to have_content(turma.dt_abertura_inscricao)
     expect(page).to have_content(turma.dt_fim_inscricao)
   end
