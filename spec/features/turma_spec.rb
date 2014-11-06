@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'factory_girl_rails'
 
 describe 'Turmas', :type => :feature do
   it 'Adicionar uma Turma' do
@@ -18,4 +19,16 @@ describe 'Turmas', :type => :feature do
 
     expect(page).to have_content("Turma was successfully created.")
   end
+  it 'Visualizar uma Turma' do
+    turma = FactoryGirl.create(:turma)
+    
+    visit turma_path(turma)
+
+    expect(page).to have_content(turma.cd_turma)
+    expect(page).to have_content(turma.dt_inicio)
+    expect(page).to have_content(turma.dt_fim)
+    expect(page).to have_content(turma.dt_abertura_inscricao)
+    expect(page).to have_content(turma.dt_fim_inscricao)
+  end
+
 end
