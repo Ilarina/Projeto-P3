@@ -89,10 +89,7 @@ RSpec.describe TurmasController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        FactoryGirl.build(:turma, dt_inicio: "2014-12-06",
-                                  dt_fim: "2014-12-06",
-                                  dt_abertura_inscricao: "2014-12-06",
-                                  dt_fim_inscricao: "2014-12-06").attributes.symbolize_keys
+        FactoryGirl.build(:turma, dt_fim: "2014-12-06").attributes.symbolize_keys
       }
 
       it "updates the requested turma" do

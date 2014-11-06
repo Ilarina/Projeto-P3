@@ -1,4 +1,6 @@
 Prova::Application.routes.draw do
+  resources :alunos
+
   resources :turmas
 
   # The priority is based upon order of creation: first created -> highest priority.
